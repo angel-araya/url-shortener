@@ -22,6 +22,8 @@ const connectOptions = {
     reconnectTries: Number.MAX_VALUE,
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
 };
 
 mongoose.Promise = global.Promise;
