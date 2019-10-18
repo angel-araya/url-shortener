@@ -53,7 +53,7 @@ module.exports = (app) => {
                     res.status(200).json(newItem);
                 }
             } catch (err) {
-                res.status(401).json('Invalid User Id');
+                res.status(401).json(`${err}`);
             }
         } else {
             return res.status(401).json('Invalid Original Url');
