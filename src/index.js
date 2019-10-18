@@ -1,4 +1,6 @@
 
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
@@ -7,12 +9,12 @@ const bodyParser = require('body-parser');
 require('./models/UrlShorten');
 const route = require('./routes/urlshorten');
 
-const mongoUri = 'mongodb://localhost/url-shortener';
-const PORT = 7677;
+const mongoUri = `mongodb://${process.env.DB_SERVER}/url-shortener`;
+const { PORT } = process.env;
 
 const app = express();
 app.use(bodyParser.json());
-app.use(morgan('dev'));
+app.use(morgan(process.env.LOG_LEVEL));
 route(app);
 
 const connectOptions = {
