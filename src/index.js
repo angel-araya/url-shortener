@@ -23,13 +23,16 @@ const connectOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
+    pass: `${encodeURIComponent(process.env.DB_PASSWORD)}`,
+    authSource: 'admin',
 };
 
 mongoose.Promise = global.Promise;
 
 mongoose.connect(mongoUri, connectOptions, (err, db) => {
-    if (err) console.log(`${err}`);
+    if (err) {
+        throw new Error(err);
+    }
     console.log('Connected to db');
 });
 
