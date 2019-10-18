@@ -1,0 +1,25 @@
+{
+  "name": "url-shortener",
+  "version": "0.1.0",
+  "description": "URL Shortener ",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "author": "Angel Araya",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.4",
+    "morgan": "^1.9.1",
+    "short-id": "0.1.0-1",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
